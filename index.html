@@ -15062,18 +15062,41 @@ a.anchor-link {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.12); /* Reduced shadow */
       transform: translateY(2px) scale(1.02); /* Move down and slightly enlarge */
   }
-  .navigation-button-link {
-    text-decoration: none;
-    display: inline-block;
+  /* Ensure the <a> tag behaves like a button */
+.navigation-button-link {
+  text-decoration: none; /* Remove underline from the link */
+  display: inline-block; /* Make it behave like a block element */
+  width: auto; /* Adjust the width based on content */
 }
 
-.navigation-button-link button {
-    all: unset; /* Removes default button styles */
-    display: block;
-    width: 100%; /* Make sure the button fills the link */
-    text-align: center;
-    cursor: pointer;
+.navigation-button-link .navigation-button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  background-color: #B0C4DE; /* pastel blue */
+  color: #2C3E50; /* dark grey */
+  transition: background-color 0.3s ease, box-shadow 0.1s ease, transform 0.1s ease;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12); /* Enhanced shadow */
+  background-image: linear-gradient(to bottom, #B0C4DE, #A2B9CC); /* gradient for 3D effect */
+  animation: breathe 4s infinite; /* Adding the breathe animation */
+  text-align: center; /* Center text in the button */
+  cursor: pointer;
 }
+
+.navigation-button-link .navigation-button:hover {
+  background-color: #A2B9CC; /* Slightly darker pastel blue */
+  background-image: linear-gradient(to bottom, #A2B9CC, #91A4B5); /* Gradient for 3D effect */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.navigation-button-link .navigation-button:active {
+  background-color: #91A4B5; /* Even darker pastel blue */
+  background-image: linear-gradient(to bottom, #91A4B5, #8194A0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.12); /* Reduced shadow */
+  transform: translateY(2px) scale(1.02); /* Move down and slightly enlarge */
+}
+
 
   @keyframes breathe {
       0%, 100% {
